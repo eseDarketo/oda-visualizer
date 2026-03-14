@@ -94,13 +94,11 @@ export function SpotifyProvider({ children }: SpotifyProviderProps) {
         .then((newTokens) => {
           setTokens(newTokens);
           setError(null);
-          // Clean up URL
-          window.history.replaceState({}, "", "/");
+          // Redirect to main page
+          window.location.href = "/";
         })
         .catch((err) => {
           setError(err.message);
-        })
-        .finally(() => {
           setIsLoading(false);
         });
     }
