@@ -187,8 +187,7 @@ export function SpotifyProvider({ children }: SpotifyProviderProps) {
       setError("Spotify Client ID not configured");
       return;
     }
-    console.log("[v0] Redirect URI being used:", REDIRECT_URI);
-    console.log("[v0] Client ID:", CLIENT_ID);
+    alert("Redirect URI: " + REDIRECT_URI);
     initiateSpotifyAuth(CLIENT_ID, REDIRECT_URI);
   }, []);
 
