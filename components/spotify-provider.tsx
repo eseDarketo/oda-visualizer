@@ -24,7 +24,7 @@ import { extractDominantColor, rgbToHslString, type RGB } from "@/lib/color-extr
 const CLIENT_ID = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID || "";
 const REDIRECT_URI =
   typeof window !== "undefined"
-    ? `${window.location.origin}/callback`
+    ? `${window.location.protocol}//${window.location.hostname === "localhost" ? "127.0.0.1" : window.location.hostname}${window.location.port ? ":" + window.location.port : ""}/callback`
     : process.env.NEXT_PUBLIC_SPOTIFY_REDIRECT_URI || "";
 
 const POLL_INTERVAL = 4000; // 4 seconds
